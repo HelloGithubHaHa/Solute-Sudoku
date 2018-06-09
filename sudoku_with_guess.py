@@ -249,6 +249,10 @@ def start(cheet_with_infer, cheet_without_infer):
                     new_cheet_without_infer[i][j] = num
                     res = start(new_cheet_with_infer, new_cheet_without_infer)
                     if res:
+                        cheet_with_infer.clear()
+                        cheet_with_infer.extend(new_cheet_with_infer)
+                        cheet_without_infer.clear()
+                        cheet_without_infer.extend(new_cheet_without_infer)
                         return True
                     else:
                         print('Guess error, begin next guess!')
